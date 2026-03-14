@@ -37,6 +37,8 @@ Read contexts/project.yaml for full structured knowledge about this project.
 - Build: pnpm ui:build:win / ui:build:mac / ui:build:linux
 - Test: pnpm test
 - MCP: cd apps/ui && pnpm mcp:sse
+- BMAD Install: pnpm bmad:install
+- BMAD Update: pnpm bmad:update
 
 ## Optional: IDE-specific configs
 
@@ -52,4 +54,3 @@ node scripts/init-agent.js all      # all IDEs
 ## Sync contexts after codebase changes
 
 Read `.agent/skills/context-sync/SKILL.md` for when and how to sync.
-

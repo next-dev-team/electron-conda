@@ -41,7 +41,7 @@ views: # 11 files + 1 dir
   DevToolView.jsx: 1KB
   ProjectsView.jsx: 0KB
   UIView.jsx: 0KB
-  ScrumBoardView/: dir (311KB+)
+  ScrumBoardView/: dir (339KB+)
 
 components: # 18 files + 4 dirs
   WizardSteps.jsx: 38KB
@@ -62,7 +62,7 @@ components: # 18 files + 4 dirs
   AutoUpdatePanel.jsx: 13KB
   DesignSystemEditor.jsx: 7KB
   GlobalErrorBoundary.jsx: 3KB
-  bmad/: dir
+  bmad/: dir (6 components)
   editor/: dir
   kubb/: dir
   ui/: 21 shadcn primitives

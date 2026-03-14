@@ -29,6 +29,8 @@ commands:
   test: pnpm test
   mcp: cd apps/ui && pnpm mcp:sse
   generators: pnpm gen
+  bmad_install: pnpm bmad:install
+  bmad_update: pnpm bmad:update
 
 # Context structure:
 # contexts/tech.yaml          — monorepo-level deps

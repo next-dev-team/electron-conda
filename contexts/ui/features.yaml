@@ -6,7 +6,8 @@ anti_detection: # apps/ui/src/main/anti-detection/
   proxy-manager.js: 4KB
   stealth-script.js: 15KB
 
-bmad_agents: [analyst, architect, dev, pm, sm, ux-designer]
+bmad_agents: [analyst, architect, dev, pm, sm, ux-designer, qa, quick-flow-solo-dev]
+bmad_version: 6.1.0
 
 scrum_server: apps/ui/scripts/scrum-mcp-server.js (107KB)
 scrum_workflow: backlog -> ready-for-dev -> in-progress -> review -> done
@@ -20,4 +21,9 @@ tests: # apps/ui/tests/
   - helpers/: dir
   - unit/: dir
 
-bmad_outputs: # _bmad-output/ — empty, run BMAD agents to generate
+bmad_outputs: # _bmad-output/
+  - architecture.md
+  - prd.md
+  - product-brief.md
+  - planning-artifacts/: dir
+  - implementation-artifacts/: dir

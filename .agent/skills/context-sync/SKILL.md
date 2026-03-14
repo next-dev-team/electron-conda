@@ -66,6 +66,7 @@ Scan:
 - Primary app key deps for the stack summary
 
 Write: identity, workspaces list, primary_app, stack, lang, rules, commands.
+Include all scripts from root package.json (dev, build, test, bmad:install, bmad:update, etc.).
 Footer: comments listing all available context files.
 
 ### tech.yaml — monorepo root deps only
@@ -83,7 +84,8 @@ Source:
 
 - `_bmad-output/prd.md` → if non-empty, extract as YAML block
 - `_bmad-output/product-brief.md` → if non-empty, extract
-- If both empty: preserve existing manual prd.yaml
+- `_bmad-output/planning-artifacts/` → check for additional planning docs
+- If all empty: preserve existing manual prd.yaml
 
 ## Context Files — Per Workspace
 
@@ -109,9 +111,12 @@ Scan:
 
 - Feature directories within the app (anti-detection, bmad, scrum, etc.)
 - Test files in the app's test directory
-- BMAD outputs relevant to this app
+- BMAD version from `_bmad/bmm/config.yaml` → `bmad_version` field
+- BMAD agents from `_bmad/bmm/agents/` → `bmad_agents` list
+- BMAD outputs: list all files in `_bmad-output/` including subdirs
+  (planning-artifacts/, implementation-artifacts/)
 
-Write: file lists per feature area, test files, BMAD artifact availability.
+Write: file lists per feature area, test files, bmad_version, bmad_agents, bmad_outputs.
 
 ### {app}/tech.yaml
 

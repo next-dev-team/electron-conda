@@ -21,7 +21,9 @@
     "ui:build:linux": "turbo -F @nde/next-gen-tools build:linux",
     "gen": "turbo gen",
     "gen:workspace": "turbo gen workspace",
-    "gen:turbo": "npx create-turbo@latest --example basic"
+    "gen:turbo": "npx create-turbo@latest --example basic",
+    "bmad:install": "bmad-method install",
+    "bmad:update": "bmad-method install --yes --action update --modules bmm --tools none"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
   "homepage": "https://github.com/next-dev-team/next-gen#readme",
   "devDependencies": {
     "@turbo/gen": "^2.6.3",
+    "bmad-method": "^6.1.0",
     "node-plop": "^0.32.3",
     "tsx": "^4.21.0",
     "turbo": "^2.7.6",
