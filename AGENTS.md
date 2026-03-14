@@ -1,45 +1,55 @@
 # Project Agent Rules
 
-## Project Overview
+Read contexts/project.yaml for full structured knowledge about this project.
 
-- **Name**: Next-Gen Development Tools
-- **Description**: A comprehensive desktop application for developers featuring browser automation, LLM integration, and BMAD-method Scrum workflow management.
-- **Tech Stack**: Electron, React, Vite, Zustand, Node.js, TypeScript
+## Quick Reference
 
-## Key Features
+- Name: Next-Gen Development Tools (@nde/next-gen-tools v1.0.1)
+- Type: Electron 28 desktop app
+- Stack: React 19, Zustand 5, TailwindCSS 4, Ant Design 6, Radix/shadcn
+- Build: pnpm monorepo + Turborepo + electron-vite
+- Language: JavaScript (.js/.jsx only, no TS)
+- Main app: apps/ui/
 
-1. **Browser Automation** - Camoufox-based anti-detection browser
-2. **LLM Integration** - Multiple providers (GPT4Free, OpenAI, Local LLM)
-3. **Scrum Board** - Full Kanban with BMAD agent integration
-4. **MCP Server** - Tool execution via MCP protocol
+## Coding Rules
 
-## Coding Standards
+- React functional components + hooks only
+- Zustand stores with selector pattern: useStore((s) => s.value)
+- One store per domain in stores/
+- Views in views/, components in components/, shadcn in components/ui/
+- HashRouter routing (required for Electron)
+- IPC via contextBridge.exposeInMainWorld() in preload
+- Ant Design for data-heavy UI, shadcn/ui for primitives
 
-- Use React functional components with hooks
-- State management via Zustand stores
-- Follow ESLint and Prettier rules
-- Write JSDoc comments for complex functions
-- Use meaningful variable names
+## Key Paths
 
-## File Structure
+- Main process: apps/ui/src/main/index.js
+- Anti-detection: apps/ui/src/main/anti-detection/
+- React app: apps/ui/src/renderer/src/
+- Stores: apps/ui/src/renderer/src/stores/ (11 stores)
+- MCP server: apps/ui/scripts/scrum-mcp-server.js
+- BMAD agents: _bmad/bmm/agents/
+- Tests: apps/ui/tests/
 
-```text
-apps/
-  ui/               - Main Electron app
-  mmo/              - MMO automation tools
-packages/
-  llm/              - LLM service package
-  agent-llm/        - Agent LLM integration
-  scripts/          - Shared scripts
-_bmad/              - BMAD Method files
-  bmm/agents/       - Agent personas
-  bmm/config.yaml   - Project config
-_bmad-output/       - Generated artifacts
+## Commands
+
+- Dev: pnpm ui
+- Build: pnpm ui:build:win / ui:build:mac / ui:build:linux
+- Test: pnpm test
+- MCP: cd apps/ui && pnpm mcp:sse
+
+## Optional: IDE-specific configs
+
+Generate additional IDE-specific agent rule files (gitignored):
+
+```bash
+node scripts/init-agent.js          # interactive
+node scripts/init-agent.js cursor   # Cursor (.cursorrules)
+node scripts/init-agent.js claude   # Claude Code (CLAUDE.md)
+node scripts/init-agent.js all      # all IDEs
 ```
 
-## Communication Style
+## Sync contexts after codebase changes
 
-- Be concise and provide actionable guidance
-- Include code examples when helpful
-- Explain trade-offs for architectural decisions
-- Reference project files when relevant
+Read `.agent/skills/context-sync/SKILL.md` for when and how to sync.
+

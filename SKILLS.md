@@ -29,6 +29,22 @@ AI-driven agile development with GUI, IDE, and MCP integration.
 
 ---
 
+### 2. Context Sync
+
+**Location:** `.agent/skills/context-sync/SKILL.md`
+
+Scan the codebase and regenerate `contexts/*.yaml` to keep AI agent knowledge current.
+
+**When to use:**
+
+- Start of a new session (check staleness)
+- After adding stores, views, components, or dependencies
+- After BMAD agents generate new artifacts
+
+**How:** Read the skill, scan directories, write YAML — no script needed.
+
+---
+
 ## How to Use Skills
 
 1. **Read the skill file** before starting related work

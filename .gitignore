@@ -19,3 +19,11 @@ gen
 .turbo
 temps
 _bmad-output/.rag-index.json
+
+# IDE agent configs (generated per-dev via: node scripts/init-agent.js)
+.cursorrules
+.cursor/rules
+.windsurfrules
+.clinerules
+CLAUDE.md
+.github/copilot-instructions.md

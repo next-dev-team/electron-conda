@@ -1,0 +1,53 @@
+# PRD — load when planning, prioritizing, or checking project status
+
+version: 1.0.1
+
+done:
+  - anti-detection engine + Ghostery adblocker
+  - MCP installer (MCPInstaller.jsx)
+  - LLM chat (AgentChat.jsx)
+  - wallpapers (WallpaperPicker.jsx)
+  - menu management (MenuManagement.jsx)
+  - auto update (AutoUpdatePanel.jsx)
+
+partial:
+  - launchpad (LaunchpadView.jsx exists)
+  - OCR capture (OCRCapture.jsx exists)
+  - plugin system (PluginManager.jsx exists)
+  - device mockups (DeviceMockup.jsx exists)
+  - agent flows (BMAD agents working, not all flows)
+  - generators (system works, limited templates)
+
+not_started:
+  - projects mgt with @nut-tree/nut-js
+  - VirusTotal scan results
+  - HTTPS for MCP
+
+v102_plan:
+  theme: RAG & Memory — agents "remember" tickets, chats, documents
+  phase1: RAG core — ragServiceWrapper.js exists (scaffolded)
+  phase2: brain store — projectContextStore.js exists (scaffolded)
+  phase3: agent context injection — ContextManager.jsx exists (partial)
+  phase4: vibe coding interface — not started
+  tech: [LangChain.js, MemoryVectorStore or SQLite-VSS, transformers.js or OpenAI embeddings]
+
+issues:
+  large_files:
+    - ScrumBoardView.jsx 311KB — split into 10+ components
+    - MainLayout.jsx 65KB — separate sidebar/header/shell
+    - BrowserToolView.jsx 100KB — decompose
+    - AgentChat.jsx 68KB — extract logic
+    - scrum-mcp-server.js 109KB — modularize
+  structural:
+    - packages/ empty — monorepo is single-app
+    - no TypeScript despite TS in deps
+    - hybrid UI (AntD + shadcn) may conflict
+    - ProjectsView and UIView are stubs
+
+improvements:
+  - TypeScript migration
+  - file decomposition
+  - use packages/ for shared logic
+  - consolidate UI library
+  - typed IPC contracts
+  - more unit tests (mostly E2E today)
